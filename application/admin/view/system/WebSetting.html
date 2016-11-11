@@ -1,0 +1,119 @@
+{extend name="public:base" /}
+{block  name="css"}
+
+{/block}
+
+{block  name="js"}
+
+{/block}
+
+
+{block name="main"}
+<div id="content-wrapper">
+    <ul class="breadcrumb breadcrumb-page">
+        <div class="breadcrumb-label text-light-gray">您的位置: </div>
+        <li><a href="#">系统管理</a></li>
+        <li><a href="{:url('System/websetting')}">网站基础</a></li>
+    </ul>
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <form class="panel form-horizontal" action="{:url('System/WebSetting')}" method="post">
+                <div class="panel-heading">
+                    <span class="panel-title">网站基础设置</span>
+                </div>
+
+                <div class="panel-body">
+                    <ul class="nav nav-tabs bs-tabdrop-example">
+                        <li class="active"><a href="#bs-tabdrop-tab1" data-toggle="tab">基本设置</a></li>
+                        <li class=""><a href="#bs-tabdrop-tab2" data-toggle="tab">联系方式</a></li>
+                        <!--<li class=""><a href="#bs-tabdrop-tab3" data-toggle="tab">Section 3</a></li>-->
+                        <!--<li class=""><a href="#bs-tabdrop-tab4" data-toggle="tab">Section 4</a></li>-->
+                    </ul>
+                    <div class="tab-content tab-content-bordered">
+                        <div class="tab-pane active" id="bs-tabdrop-tab1">
+                            <div class="form-group">
+                                <label for="Name" class="col-sm-2 control-label">网站名称</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$row.Name}" name="Name" id="Name" placeholder="网站名称">
+                                </div>
+                            </div> <!-- / .form-group -->
+                            <div class="form-group">
+                                <label for="HostName" class="col-sm-2 control-label">主站域名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="HostName" value="{$row.HostName}" id="HostName" placeholder="主站域名">
+                                </div>
+                            </div> <!-- / .form-group -->
+                            <div class="form-group">
+                                <label for="ICP" class="col-sm-2 control-label">ICP备案</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="ICP" id="ICP" value="{$row.ICP}" placeholder="ICP备案">
+                                </div>
+                            </div> <!-- / .form-group -->
+                            <div class="form-group">
+                                <label for="AdminEmail" class="col-sm-2 control-label">新订单发送邮件</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="AdminEmail"  value="{$row.AdminEmail}" id="AdminEmail" placeholder="新订单发送邮件">
+                                </div>
+                            </div> <!-- / .form-group -->
+                            <div class="form-group">
+                                <label for="AdminMobile" class="col-sm-2 control-label">新订单发送手机</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="AdminMobile"   value="{$row.AdminMobile}" id="AdminMobile" placeholder="新订单发送手机">
+                                </div>
+                            </div> <!-- / .form-group -->
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary">保存</button>
+                                </div>
+                            </div> <!-- / .form-group -->
+                        </div>
+
+
+                        <div class="tab-pane" id="bs-tabdrop-tab2">
+                            <div class="form-group">
+                                <label for="Email" class="col-sm-2 control-label">邮件地址</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="Email"  value="{$row.Email}" id="Email" placeholder="邮件地址">
+                                </div>
+                            </div> <!-- / .form-group -->
+                            <div class="form-group">
+                                <label for="Tel" class="col-sm-2 control-label">联系电话</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="Tel" value="{$row.Tel}" id="Tel" placeholder="联系电话">
+                                </div>
+                            </div> <!-- / .form-group -->
+                            <div class="form-group">
+                                <label for="QQ" class="col-sm-2 control-label">联系QQ</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="QQ" value="{$row.QQ}" id="QQ" placeholder="联系QQ">
+                                </div>
+                            </div> <!-- / .form-group -->
+                            <div class="form-group">
+                                <label for="Address" class="col-sm-2 control-label">联系地址</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="Address" value="{$row.Address}" id="Address" placeholder="联系地址">
+                                </div>
+                            </div> <!-- / .form-group -->
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary">保存</button>
+                                </div>
+                            </div> <!-- / .form-group -->
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        init.push(function () {
+            $('ul.bs-tabdrop-example').tabdrop();
+        });
+    </script>
+</div>
+{/block}

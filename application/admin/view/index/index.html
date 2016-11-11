@@ -1,0 +1,192 @@
+{extend name="public:base" /}
+{block  name="css"}
+
+{/block}
+
+{block  name="js"}
+
+{/block}
+
+
+{block name="main"}
+<div id="content-wrapper">
+
+    <ul class="breadcrumb breadcrumb-page">
+        <div class="breadcrumb-label text-light-gray">您的位置: </div>
+        <li><a href="{:url('index/index')}">首页</a></li>
+    </ul>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="stat-panel">
+                <div class="stat-row">
+                    <!-- Small horizontal padding, bordered, without right border, top aligned text -->
+                    <div class="stat-cell col-sm-4 padding-sm-hr bordered no-border-r valign-top">
+                        <!-- Small padding, without top padding, extra small horizontal padding -->
+                        <h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-bar-chart-o text-primary"></i>&nbsp;&nbsp;有效订单统计</h4>
+                        <!-- Without margin -->
+                        <ul class="list-group no-margin">
+                            <!-- Without left and right borders, extra small horizontal padding, without background, no border radius -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg no-border-radius">
+                                线路订单
+                                <span class="label label-danger pull-right">成人：12334 </span>
+                                <span class="label label-danger pull-right">儿童：12421 </span>
+                                <span class="label label-danger pull-right">老人：124124 </span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, extra small horizontal padding, without background -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg">
+                                酒店订单 <span class="label label-danger pull-right">123123123</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, without bottom border, extra small horizontal padding, without background -->
+                            <li class="list-group-item no-border-hr no-border-b padding-xs-hr no-bg">
+                                景区订单 <span class="label label-danger pull-right">12</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, extra small horizontal padding, without background -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg">
+                                签证订单 <span class="label label-danger pull-right">128</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, without bottom border, extra small horizontal padding, without background -->
+
+                            <h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-bar-chart-o text-primary"></i>&nbsp;&nbsp;待确认的订单</h4>
+                            <!-- Without margin
+                            <ul class="list-group no-margin">
+                                <!-- Without left and right borders, extra small horizontal padding, without background, no border radius -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg no-border-radius">
+                                线路订单 <span class="label label-pa-purple pull-right">34</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, extra small horizontal padding, without background -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg">
+                                酒店订单 <span class="label label-pa-purple pull-right">128</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, without bottom border, extra small horizontal padding, without background -->
+                            <li class="list-group-item no-border-hr no-border-b padding-xs-hr no-bg">
+                                景区订单 <span class="label label-pa-purple pull-right">12</span>
+                            </li> <!-- / .list-group-item -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg no-border-radius">
+                                签证订单 <span class="label label-pa-purple pull-right">34</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, extra small horizontal padding, without background -->
+                        </ul>
+                    </div> <!-- /.stat-cell -->
+                    <div class="stat-cell col-sm-4 padding-sm-hr bordered no-border-r valign-top">
+                        <!-- Small padding, without top padding, extra small horizontal padding -->
+                        <h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-bar-chart-o text-primary"></i>&nbsp;&nbsp;交易统计</h4>
+                        <!-- Without margin
+                        <ul class="list-group no-margin">
+                            <!-- Without left and right borders, extra small horizontal padding, without background, no border radius -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg no-border-radius">
+                                线路订单交易额 <span class="label label-success pull-right">34</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, extra small horizontal padding, without background -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg">
+                                酒店订单交易额 <span class="label label-success pull-right">128</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, without bottom border, extra small horizontal padding, without background -->
+                            <li class="list-group-item no-border-hr no-border-b padding-xs-hr no-bg">
+                                景区订单交易额 <span class="label label-success pull-right">12</span>
+                            </li> <!-- / .list-group-item -->
+                            <li class="list-group-item no-border-hr padding-xs-hr no-bg no-border-radius">
+                                签证订单交易额 <span class="label label-success pull-right">34</span>
+                            </li> <!-- / .list-group-item -->
+                            <!-- Without left and right borders, extra small horizontal padding, without background -->
+
+                        </ul>
+                    </div> <!-- /.stat-cell -->
+
+
+                </div>
+            </div> <!-- /.stat-panel -->
+        </div>
+
+
+
+
+        <div class="col-md-12">
+            <div class="panel panel-dark panel-light-green">
+                <div class="panel-heading">
+                    <span class="panel-title"><i class="panel-title-icon fa fa-smile-o"></i>最新订单</span>
+                </div> <!-- / .panel-heading -->
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>下单时间</th>
+                        <th>类型</th>
+                        <th>订单名称</th>
+                        <th>支付状态</th>
+                        <th>订单金额</th>
+                        <th>联系人</th>
+                        <th>手机号</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="valign-middle">
+                    <tr>
+                        <td>2016-11-05 16:58:18	</td>
+                        <td>旅游</td>
+                        <td>爱优游·丰顺八乡山大峡谷·金德宝温泉一天游</td>
+                        <td>已退款</td>
+                        <td>￥180</td>
+                        <td>林春宜</td>
+                        <td>13128368216</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>2016-11-05 16:58:18	</td>
+                        <td>旅游</td>
+                        <td>爱优游·丰顺八乡山大峡谷·金德宝温泉一天游</td>
+                        <td>已退款</td>
+                        <td>￥180</td>
+                        <td>林春宜</td>
+                        <td>13128368216</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>2016-11-05 16:58:18	</td>
+                        <td>旅游</td>
+                        <td>爱优游·丰顺八乡山大峡谷·金德宝温泉一天游</td>
+                        <td>已退款</td>
+                        <td>￥180</td>
+                        <td>林春宜</td>
+                        <td>13128368216</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>2016-11-05 16:58:18	</td>
+                        <td>旅游</td>
+                        <td>爱优游·丰顺八乡山大峡谷·金德宝温泉一天游</td>
+                        <td>已退款</td>
+                        <td>￥180</td>
+                        <td>林春宜</td>
+                        <td>13128368216</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>2016-11-05 16:58:18	</td>
+                        <td>旅游</td>
+                        <td>爱优游·丰顺八乡山大峡谷·金德宝温泉一天游</td>
+                        <td>已退款</td>
+                        <td>￥180</td>
+                        <td>林春宜</td>
+                        <td>13128368216</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>2016-11-05 16:58:18	</td>
+                        <td>旅游</td>
+                        <td>爱优游·丰顺八乡山大峡谷·金德宝温泉一天游</td>
+                        <td>已退款</td>
+                        <td>￥180</td>
+                        <td>林春宜</td>
+                        <td>13128368216</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div> <!-- / .panel -->
+        </div>
+    </div>
+</div>
+{/block}

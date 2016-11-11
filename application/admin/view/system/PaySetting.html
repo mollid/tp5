@@ -1,0 +1,138 @@
+{extend name="public:base" /}
+{block  name="css"}
+
+{/block}
+
+{block  name="js"}
+{/block}
+
+
+{block name="main"}
+<div id="content-wrapper">
+
+    <ul class="breadcrumb breadcrumb-page">
+        <div class="breadcrumb-label text-light-gray">您的位置:</div>
+        <li><a href="#">系统设置</a></li>
+        <li><a href="{:url('System/PaySetting')}">支付设置</a></li>
+    </ul>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <form class="panel form-horizontal" id="jq-validation-form" action="{:url('System/PaySetting')}" method="post">
+                <div class="panel-heading">
+                    <span class="panel-title">支付设置</span>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">开启支付功能</label>
+                        <div class="col-sm-10">
+
+                                <label  class="radio-inline">
+                                    <input type="radio" name="OpenPayMent" id="OpenPayMent1" value="1" {if condition=" $PaySetting['OpenPayMent'] eq 1"} checked="checked" {/if} class="px">
+                                    <span class="lbl">开启</span>
+                                </label>
+
+                                <label  class="radio-inline">
+                                    <input type="radio" name="OpenPayMent" id="OpenPayMent2" value="0" {if condition=" $PaySetting['OpenPayMent'] eq 0"} checked="checked" {/if} class="px">
+                                    <span class="lbl">关闭</span>
+                                </label>
+
+                        </div>
+                    </div> <!-- / .form-group -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">开启余额支付</label>
+                        <div class="col-sm-3">
+
+                                <label class="radio-inline">
+                                    <input type="radio" name="OpenBalance" id="OpenBalance1" value="1" {if condition=" $PaySetting['OpenBalance'] eq 1"} checked="checked" {/if} class="px">
+                                    <span class="lbl">开启</span>
+                                </label>
+
+
+                                <label class="radio-inline">
+                                    <input type="radio" name="OpenBalance" id="OpenBalance2" value="0" {if condition=" $PaySetting['OpenBalance'] eq 0"} checked="checked" {/if} class="px">
+                                    <span class="lbl">关闭</span>
+                                </label>
+
+                        </div>
+                    </div> <!-- / .form-group -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">开启提现功能</label>
+                        <div class="col-sm-2">
+
+                                <label class="radio-inline">
+                                    <input type="radio" name="OpenCash" id="OpenCash1" value="1" {if condition=" $PaySetting['OpenCash'] eq 1"} checked="checked" {/if} class="px">
+                                    <span class="lbl">开启</span>
+                                </label>
+
+
+                                <label class="radio-inline">
+                                    <input type="radio" name="OpenCash" id="OpenCash2" value="0" {if condition=" $PaySetting['OpenCash'] eq 0"} checked="checked" {/if} class="px">
+                                    <span class="lbl">关闭</span>
+                                </label>
+                        </div>
+                        <label class="col-sm-1 control-label"> 最低提现额</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name="OpenCashMinMoney" value="{$PaySetting['OpenCashMinMoney']}" id="OpenCashMinMoney"  placeholder="最低提现额">
+                        </div>
+
+                    </div> <!-- / .form-group -->
+
+
+                    <script>
+                        init.push(function () {
+                            if (! $('html').hasClass('ie8')) {
+                                $('.SumEditor').summernote({
+                                    height: 200,
+                                    tabsize: 2,
+                                    codemirror: {
+                                        theme: 'monokai'
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+                    <div class="form-group">
+                        <label for="PaySuccessEmail" class="col-sm-2 control-label">接收邮箱</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="PaySuccessEmail" id="PaySuccessEmail" value="{$PaySetting.PaySuccessEmail}" placeholder="接收邮箱">
+                        </div>
+                    </div> <!-- / .form-group -->
+                    <div class="form-group">
+                        <label for="PaySuccessEmailTemp" class="col-sm-2 control-label">支付成功邮件通知模板</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control SumEditor" rows="4" name="PaySuccessEmailTemp" placeholder="支付成功邮件通知模板" id="PaySuccessEmailTemp">{$PaySetting['PaySuccessEmailTemp']}</textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="PaySuccessSMS" class="col-sm-2 control-label">接收手机</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="PaySuccessSMS" id="PaySuccessSMS" value="{$PaySetting.PaySuccessSMS}" placeholder="接收手机">
+                        </div>
+                    </div> <!-- / .form-group -->
+                    <div class="form-group">
+                        <label for="PaySuccessSMSTemp" class="col-sm-2 control-label">支付成功手机通知模板</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control SumEditor" rows="4" name="PaySuccessSMSTemp" placeholder="支付成功手机通知模板" id="PaySuccessSMSTemp">{$PaySetting['PaySuccessSMSTemp']}</textarea>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <div class="col-sm-offset-2 col-sm-3">
+                            <button type="submit" class="btn btn-primary">保存</button>
+                        </div>
+                    </div> <!-- / .form-group -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{/block}

@@ -1,0 +1,57 @@
+<div id="main-navbar" class="navbar navbar-invers" role="'navigation">
+    <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">隐藏菜单</span></button>
+    <div class="navbar-inner">
+        <div class="navbar-header">
+            <!-- Logo -->
+            <a href="/" class="navbar-brand">
+                <div><img alt="Pixel Admin" src="/static/admin/images/pixel-admin/main-navbar-logo.png"></div>
+                管理系统
+            </a>
+            <!-- Main navbar toggle -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
+        </div>
+        <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="{:url('index/index')}">首页</a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" >分销系统</a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" >供应商系统</a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" >在线客服系统</a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" >广告系统</a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" >微信管理系统</a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" >营销管理系统</a>
+                </li>
+
+            </ul> <!-- / .navbar-nav -->
+            <div class="right clearfix">
+                <ul class="nav navbar-nav pull-right right-navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
+                            <img src="/static/admin/images/pixel-admin/avatar.png" alt="">
+                            <span>{$AdminInfo['UserName']}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!--<li><a href="#"><span class="label label-warning pull-right">New</span>消息</a></li>-->
+                            <!--<li><a href="#"><span class="badge badge-primary pull-right">New</span>通知</a></li>-->
+                            <li><a href="{:url('Admin/UserInfoSetting')}"><i class="dropdown-icon fa fa-cog"></i>&nbsp;&nbsp;设置</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{:url('Login/logout')}"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
